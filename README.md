@@ -43,7 +43,7 @@ Raw rows are stored as text and include `_source_file`, `_loaded_at`, `_row_hash
 - `analytics/queries/q01_*.sql` through `q10_*.sql`: requested business queries; `q11_recruitment_funnel.sql` is the bonus funnel.
 - `analytics/results/q01_*.csv` through `q10_*.csv`: requested query outputs; q11 has its own CSV result.
 - `presentation/cfo_findings.md`: three data-backed findings with query evidence and recommended actions.
-- `presentation/slides.pdf`: CFO demo deck (six slides maximum).
+- `presentation/slides.pdf`: CFO briefing deck (six slides maximum).
 - `analytics/dashboard.html`: offline dashboard with overtime, payroll exceptions, absenteeism and recruitment funnel views.
 - `analytics/results/q11_recruitment_funnel.csv`: bonus stage conversion and median days from the previous stage.
 

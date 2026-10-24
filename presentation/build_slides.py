@@ -1,4 +1,4 @@
-"""Create the six-slide CFO demo PDF from pipeline outputs."""
+"""Create the six-slide CFO briefing PDF from pipeline outputs."""
 from pathlib import Path
 import sqlite3
 import pandas as pd
