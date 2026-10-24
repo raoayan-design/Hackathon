@@ -2,7 +2,12 @@
 import sqlite3
 from pathlib import Path
 import argparse
+import os
+from io import StringIO
 import pandas as pd
+os.environ.setdefault("MPLCONFIGDIR",str(Path(__file__).resolve().parents[1]/"tmp"/"matplotlib"))
+from matplotlib.backends.backend_svg import FigureCanvasSVG
+from matplotlib.figure import Figure
 
 ROOT = Path(__file__).resolve().parent
 DB = ROOT.parent / "warehouse" / "peopleops.sqlite"
@@ -141,14 +146,21 @@ def write_dashboard(con):
     rate_change=(float(aug.amount/aug.hours)/float(apr.amount/apr.hours)-1)*100
     hours_change=(float(aug.hours/apr.hours)-1)*100
     over_hours=len(excess); sep_amount=float(postsep.earnings.sum()); zero_amount=float(zero.earnings.sum())
-    max_cost=max(float(r["amount"]) for r in cost.to_dict("records")); svg_w,svg_h=600,220
-    points=[]
-    for i,r in enumerate(cost.to_dict("records")):
-        x=45+i*100; y=175-(float(r["amount"])/max_cost)*135
-        points.append((x,y,r["payroll_month"][5:]))
-    path=" ".join(("M" if i==0 else "L")+f"{x},{y:.1f}" for i,(x,y,_) in enumerate(points))
-    labels="".join(f'<text x="{x}" y="205" text-anchor="middle">{m}</text><circle cx="{x}" cy="{y:.1f}" r="5"/>' for x,y,m in points)
-    svg=f'<svg viewBox="0 0 {svg_w} {svg_h}" role="img" aria-label="Monthly overtime cost line chart"><path d="{path}" fill="none" stroke="#087f78" stroke-width="4"/>{labels}</svg>'
+    fig=Figure(figsize=(9,3.1),facecolor="white")
+    ax=fig.subplots()
+    months=[m[5:] for m in cost.payroll_month]
+    ax.plot(months,cost.amount/1_000_000,color="#087f78",linewidth=2.8,marker="o",markersize=6)
+    ax.fill_between(months,cost.amount/1_000_000,color="#087f78",alpha=.10)
+    ax.set_ylabel("PKR millions",color="#536774")
+    ax.set_ylim(0,max(cost.amount/1_000_000)*1.18)
+    ax.grid(axis="y",color="#d4dad7",linewidth=.8)
+    ax.spines[["top","right","left"]].set_visible(False)
+    ax.spines["bottom"].set_color("#d4dad7")
+    ax.tick_params(axis="both",colors="#536774",length=0,pad=8)
+    ax.set_title("Monthly overtime cost",loc="left",color="#142b3a",fontsize=13,pad=14)
+    fig.tight_layout()
+    svg_buffer=StringIO(); FigureCanvasSVG(fig).print_svg(svg_buffer)
+    svg=svg_buffer.getvalue(); svg=svg[svg.index("<svg"):]
     def table(frame, columns, headers):
         head="".join(f"<th>{h}</th>" for h in headers)
         body="".join("<tr>"+"".join(f"<td>{row[col]}</td>" for col in columns)+"</tr>" for _,row in frame.iterrows())

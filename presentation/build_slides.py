@@ -1,7 +1,13 @@
 """Create the six-slide CFO briefing PDF from pipeline outputs."""
 from pathlib import Path
+import os
 import sqlite3
+from io import BytesIO
 import pandas as pd
+os.environ.setdefault("MPLCONFIGDIR",str(Path(__file__).resolve().parents[1]/"tmp"/"matplotlib"))
+from matplotlib.figure import Figure
+from matplotlib.backends.backend_agg import FigureCanvasAgg
+from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen import canvas
 from reportlab.lib.colors import HexColor, white
 from reportlab.lib.pagesizes import landscape
@@ -43,25 +49,26 @@ def metric(c,x,y,label,value,note,color=TEAL):
     c.setFillColor(MUTED); c.setFont("Helvetica",11); c.drawString(x,y-10,note)
 
 def bar_chart(c, rows, labels, series, colors, x,y,w,h,unit_label):
-    c.setFillColor(MUTED); c.setFont("Helvetica",9); c.drawString(x,y+h+25,unit_label)
-    maxv=max(max(float(r[s]) for s in series) for r in rows)*1.12
-    c.setStrokeColor(LINE); c.line(x,y,x+w,y); c.line(x,y,x,y+h)
-    for tick in range(1,5):
-        yy=y+h*tick/4; c.setStrokeColor(LINE); c.line(x,yy,x+w,yy)
-        c.setFillColor(MUTED); c.setFont("Helvetica",8); c.drawRightString(x-8,yy-3,f"{maxv*tick/4:.0f}")
-    group=w/len(rows); bw=min(13,group/(len(series)+1))
-    for i,row in enumerate(rows):
-        center=x+group*(i+.5)
-        for j,s in enumerate(series):
-            val=float(row[s]); bh=h*val/maxv; xx=center-(len(series)*bw)/2+j*bw
-            c.setFillColor(colors[j]); c.rect(xx,y,bw-2,bh,fill=1,stroke=0)
-        c.setFillColor(MUTED); c.setFont("Helvetica",9); c.drawCentredString(center,y-17,str(row[labels]))
-    lx=x+150; ly=y+h+17
-    legend=["Punch-computed","Approved","Paid"]
-    for name,color,label in zip(series,colors,legend):
-        c.setFillColor(color); c.rect(lx,ly-2,9,9,fill=1,stroke=0)
-        c.setFillColor(MUTED); c.setFont("Helvetica",9); c.drawString(lx+14,ly,label)
-        lx+=112
+    fig=Figure(figsize=(9,3.2),dpi=180,facecolor="#F5F4EF")
+    ax=fig.subplots()
+    positions=list(range(len(rows))); width=.24
+    labels_out=[str(row[labels])[-2:] for row in rows]
+    legends=["Punch-computed","Approved","Paid"]
+    for i,(column,color,label) in enumerate(zip(series,colors,legends)):
+        mpl_color=(color.red,color.green,color.blue)
+        ax.bar([pos+(i-1)*width for pos in positions],[float(row[column]) for row in rows],width=width,color=mpl_color,label=label)
+    ax.set_xticks(positions,labels_out)
+    ax.set_xlabel("Month",color="#536774")
+    ax.set_ylabel(unit_label,color="#536774")
+    ax.grid(axis="y",color="#D4DAD7",linewidth=.7)
+    ax.set_axisbelow(True)
+    ax.spines[["top","right","left"]].set_visible(False)
+    ax.spines["bottom"].set_color("#D4DAD7")
+    ax.tick_params(axis="both",colors="#536774",length=0,pad=6)
+    ax.legend(frameon=False,ncol=3,loc="upper left",fontsize=8)
+    fig.tight_layout()
+    image_buffer=BytesIO(); FigureCanvasAgg(fig).print_png(image_buffer); image_buffer.seek(0)
+    c.drawImage(ImageReader(image_buffer),x,y,w,h,mask="auto")
 
 def main():
     ot=read_csv("q05_overtime_comparison.csv")
