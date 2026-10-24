@@ -1,0 +1,8 @@
+.venv/
+__pycache__/
+*.py[cod]
+warehouse/*.sqlite
+warehouse/*.db
+data/raw/*
+!data/raw/.gitkeep
+tmp/

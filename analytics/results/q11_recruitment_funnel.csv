@@ -1,0 +1,6 @@
+﻿stage,candidates,prior_stage_candidates,conversion_pct,median_days_from_previous
+Applied,1400,,,
+Screened,682,1400.0,48.7,9.0
+Interviewed,263,682.0,38.6,8.0
+Offered,90,263.0,34.2,9.0
+Hired,74,90.0,82.2,8.0

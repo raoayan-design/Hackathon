@@ -1,0 +1,151 @@
+﻿month,plant,dept_name,separations,attrition_rate_pct
+2026-04,Faisalabad Plant,Cutting,1,1.25
+2026-04,Faisalabad Plant,Maintenance,0,0.0
+2026-04,Faisalabad Plant,Packing,2,3.39
+2026-04,Faisalabad Plant,Quality Control,0,0.0
+2026-04,Faisalabad Plant,Stitching,2,1.35
+2026-04,Faisalabad Plant,Warehouse,0,0.0
+2026-04,Head Office,Administration,0,0.0
+2026-04,Head Office,Compliance,0,0.0
+2026-04,Head Office,Finance,1,5.26
+2026-04,Head Office,Human Resources,2,14.29
+2026-04,Head Office,IT,0,0.0
+2026-04,Head Office,Procurement,0,0.0
+2026-04,Head Office,Sales & Marketing,0,0.0
+2026-04,Korangi Plant,Maintenance,0,0.0
+2026-04,Korangi Plant,Production Planning,0,0.0
+2026-04,Korangi Plant,Quality Control,0,0.0
+2026-04,Korangi Plant,Spinning,1,0.84
+2026-04,Korangi Plant,Warehouse,0,0.0
+2026-04,Korangi Plant,Weaving,4,3.05
+2026-04,SITE Plant,Dyeing,0,0.0
+2026-04,SITE Plant,Maintenance,0,0.0
+2026-04,SITE Plant,Processing,0,0.0
+2026-04,SITE Plant,Quality Control,1,3.45
+2026-04,SITE Plant,Utilities,0,0.0
+2026-04,SITE Plant,Warehouse,0,0.0
+2026-05,Faisalabad Plant,Cutting,0,0.0
+2026-05,Faisalabad Plant,Maintenance,0,0.0
+2026-05,Faisalabad Plant,Packing,1,1.71
+2026-05,Faisalabad Plant,Quality Control,0,0.0
+2026-05,Faisalabad Plant,Stitching,2,1.35
+2026-05,Faisalabad Plant,Warehouse,1,4.55
+2026-05,Head Office,Administration,0,0.0
+2026-05,Head Office,Compliance,1,8.33
+2026-05,Head Office,Finance,0,0.0
+2026-05,Head Office,Human Resources,0,0.0
+2026-05,Head Office,IT,0,0.0
+2026-05,Head Office,Procurement,0,0.0
+2026-05,Head Office,Sales & Marketing,0,0.0
+2026-05,Korangi Plant,Maintenance,0,0.0
+2026-05,Korangi Plant,Production Planning,0,0.0
+2026-05,Korangi Plant,Quality Control,0,0.0
+2026-05,Korangi Plant,Spinning,3,2.55
+2026-05,Korangi Plant,Warehouse,0,0.0
+2026-05,Korangi Plant,Weaving,2,1.53
+2026-05,SITE Plant,Dyeing,3,2.69
+2026-05,SITE Plant,Maintenance,0,0.0
+2026-05,SITE Plant,Processing,1,1.01
+2026-05,SITE Plant,Quality Control,0,0.0
+2026-05,SITE Plant,Utilities,1,3.33
+2026-05,SITE Plant,Warehouse,1,3.85
+2026-06,Faisalabad Plant,Cutting,0,0.0
+2026-06,Faisalabad Plant,Maintenance,0,0.0
+2026-06,Faisalabad Plant,Packing,2,3.51
+2026-06,Faisalabad Plant,Quality Control,0,0.0
+2026-06,Faisalabad Plant,Stitching,3,2.03
+2026-06,Faisalabad Plant,Warehouse,0,0.0
+2026-06,Head Office,Administration,0,0.0
+2026-06,Head Office,Compliance,0,0.0
+2026-06,Head Office,Finance,0,0.0
+2026-06,Head Office,Human Resources,0,0.0
+2026-06,Head Office,IT,0,0.0
+2026-06,Head Office,Procurement,0,0.0
+2026-06,Head Office,Sales & Marketing,0,0.0
+2026-06,Korangi Plant,Maintenance,1,2.38
+2026-06,Korangi Plant,Production Planning,0,0.0
+2026-06,Korangi Plant,Quality Control,0,0.0
+2026-06,Korangi Plant,Spinning,0,0.0
+2026-06,Korangi Plant,Warehouse,1,3.51
+2026-06,Korangi Plant,Weaving,3,2.33
+2026-06,SITE Plant,Dyeing,1,0.9
+2026-06,SITE Plant,Finishing,1,1.01
+2026-06,SITE Plant,Maintenance,1,3.13
+2026-06,SITE Plant,Quality Control,0,0.0
+2026-06,SITE Plant,Utilities,1,3.33
+2026-06,SITE Plant,Warehouse,0,0.0
+2026-07,Faisalabad Plant,Cutting,1,1.26
+2026-07,Faisalabad Plant,Maintenance,0,0.0
+2026-07,Faisalabad Plant,Packing,2,3.64
+2026-07,Faisalabad Plant,Quality Control,1,3.13
+2026-07,Faisalabad Plant,Stitching,0,0.0
+2026-07,Faisalabad Plant,Warehouse,1,4.65
+2026-07,Head Office,Administration,0,0.0
+2026-07,Head Office,Compliance,0,0.0
+2026-07,Head Office,Finance,0,0.0
+2026-07,Head Office,Human Resources,0,0.0
+2026-07,Head Office,IT,2,14.29
+2026-07,Head Office,Sales & Marketing,0,0.0
+2026-07,Head Office,Supply Chain,1,4.88
+2026-07,Korangi Plant,Maintenance,2,4.76
+2026-07,Korangi Plant,Production Planning,1,4.08
+2026-07,Korangi Plant,Quality Control,2,5.19
+2026-07,Korangi Plant,Spinning,1,0.88
+2026-07,Korangi Plant,Warehouse,2,7.14
+2026-07,Korangi Plant,Weaving,1,0.79
+2026-07,SITE Plant,Dyeing,3,2.74
+2026-07,SITE Plant,Finishing,2,2.03
+2026-07,SITE Plant,Maintenance,2,6.67
+2026-07,SITE Plant,Quality Control,1,3.51
+2026-07,SITE Plant,Utilities,1,3.33
+2026-07,SITE Plant,Warehouse,0,0.0
+2026-08,Faisalabad Plant,Cutting,2,2.56
+2026-08,Faisalabad Plant,Maintenance,1,3.33
+2026-08,Faisalabad Plant,Packing,0,0.0
+2026-08,Faisalabad Plant,Quality Control,0,0.0
+2026-08,Faisalabad Plant,Stitching,2,1.35
+2026-08,Faisalabad Plant,Warehouse,0,0.0
+2026-08,Head Office,Administration,0,0.0
+2026-08,Head Office,Compliance,0,0.0
+2026-08,Head Office,Finance,0,0.0
+2026-08,Head Office,Human Resources,0,0.0
+2026-08,Head Office,IT,0,0.0
+2026-08,Head Office,Sales & Marketing,1,4.17
+2026-08,Head Office,Supply Chain,0,0.0
+2026-08,Korangi Plant,Maintenance,0,0.0
+2026-08,Korangi Plant,Production Planning,1,4.26
+2026-08,Korangi Plant,Quality Control,0,0.0
+2026-08,Korangi Plant,Spinning,0,0.0
+2026-08,Korangi Plant,Warehouse,0,0.0
+2026-08,Korangi Plant,Weaving,1,0.79
+2026-08,SITE Plant,Dyeing,1,0.93
+2026-08,SITE Plant,Finishing,0,0.0
+2026-08,SITE Plant,Maintenance,0,0.0
+2026-08,SITE Plant,Quality Control,0,0.0
+2026-08,SITE Plant,Utilities,0,0.0
+2026-08,SITE Plant,Warehouse,0,0.0
+2026-09,Faisalabad Plant,Cutting,2,2.6
+2026-09,Faisalabad Plant,Maintenance,0,0.0
+2026-09,Faisalabad Plant,Packing,1,1.74
+2026-09,Faisalabad Plant,Quality Control,0,0.0
+2026-09,Faisalabad Plant,Stitching,2,1.36
+2026-09,Faisalabad Plant,Warehouse,0,0.0
+2026-09,Head Office,Administration,0,0.0
+2026-09,Head Office,Compliance,0,0.0
+2026-09,Head Office,Finance,0,0.0
+2026-09,Head Office,Human Resources,0,0.0
+2026-09,Head Office,IT,0,0.0
+2026-09,Head Office,Sales & Marketing,0,0.0
+2026-09,Head Office,Supply Chain,0,0.0
+2026-09,Korangi Plant,Maintenance,1,2.44
+2026-09,Korangi Plant,Production Planning,0,0.0
+2026-09,Korangi Plant,Quality Control,1,2.63
+2026-09,Korangi Plant,Spinning,1,0.87
+2026-09,Korangi Plant,Warehouse,0,0.0
+2026-09,Korangi Plant,Weaving,0,0.0
+2026-09,SITE Plant,Dyeing,1,0.94
+2026-09,SITE Plant,Finishing,1,1.03
+2026-09,SITE Plant,Maintenance,1,3.33
+2026-09,SITE Plant,Quality Control,0,0.0
+2026-09,SITE Plant,Utilities,0,0.0
+2026-09,SITE Plant,Warehouse,0,0.0
